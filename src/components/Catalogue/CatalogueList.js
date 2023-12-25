@@ -55,10 +55,7 @@ export default function CatelogueList() {
           alignItems: "center",
         },
       }}>
-      <List
-        sx={{
-          width: "100%",
-        }}>
+      <List style={{ width: "100%" }}>
         {data.map((item, index) => (
           <>
             <ListItem>
