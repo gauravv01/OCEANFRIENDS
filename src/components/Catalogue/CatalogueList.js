@@ -56,12 +56,9 @@ export default function CatelogueList() {
         },
       }}>
       <List
-        sx={
-          {
-            //   width: "100%",
-            //   maxWidth: 360,
-          }
-        }>
+        sx={{
+          width: "100%",
+        }}>
         {data.map((item, index) => (
           <>
             <ListItem>
@@ -100,7 +97,6 @@ export default function CatelogueList() {
             />
           </>
         ))}
-        {/* Add more ListItems with buttons as needed */}
       </List>
     </Box>
   );
