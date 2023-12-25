@@ -1,0 +1,26 @@
+.creditCard{
+    height: 425px;
+    padding: 10px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo{
+height: 250px;
+transform: rotate(270deg);
+position: absolute;
+top: 75px;
+left: -50px;
+z-index: 10;
+}
+
+.cc2{
+    height: 410px;
+    position: absolute;
+    padding: 10px 30px;
+    top: -5px;
+    right: -220px;
+    overflow: hidden;
+   object-fit: contain;
+   z-index: 1;
+}
