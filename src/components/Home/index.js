@@ -14,8 +14,23 @@ import CountUp from "react-countup";
 import CreditCard from "../../Assets/card-front.png";
 import cc2 from "../../Assets/cc2.png";
 import TopBar from "../Common/TopBar";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 
 import styles from "./Index.module.css";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-90deg);
+  
+  }
+`;
 
 function index() {
   return (
@@ -35,10 +50,14 @@ function index() {
             </div>
           </BalanceSection>
         </BigTextContainer>
+
         <div className={styles.creditCard}>
           <Link to={"/creditCard"}>
             {" "}
-            <img src={CreditCard} alt="" className={styles.photo} />
+            {/* <img src={CreditCard} alt="" className={styles.photo} /> */}
+            <Reveal keyframes={customAnimation}>
+              <img src={CreditCard} alt="" className={styles.photo} />
+            </Reveal>
           </Link>
           <Link to={"/creditCard"}>
             {" "}

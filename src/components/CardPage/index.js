@@ -4,6 +4,8 @@ import CardList from "./CardList";
 import CountUp from "react-countup";
 import { Fade, Flip, Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 import {
   Container,
   Content,
@@ -36,6 +38,19 @@ const data = [
   },
 ];
 
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) translate3d(-200px,0,0);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg)  translate3d(0,0,0);
+  
+  }
+`;
+
 export default function CardPage() {
   const [tap, setTap] = useState(false);
   const enableTap = (e) => setTap(true);
@@ -60,7 +75,7 @@ export default function CardPage() {
         </BigTextContainer>
 
         <HorizontalCenter>
-          <Flip>
+          <Reveal keyframes={customAnimation}>
             <CardContainer>
               <CreditCard
                 onMouseDown={enableTap}
@@ -73,7 +88,7 @@ export default function CardPage() {
               />
               <CreditCardBack src={require("../../Assets/card-back.png")} />
             </CardContainer>
-          </Flip>
+          </Reveal>
         </HorizontalCenter>
 
         {/* Balance Section */}
